@@ -1,0 +1,6 @@
+export const storesData = [
+  { "id_store": 100790000, "store_label": "Store Three", "number_store": 3 },
+  { "id_store": 100790001, "store_label": "Store Six", "number_store": 6 },
+  { "id_store": 100790002, "store_label": "Store Nine", "number_store": 9 }
+]
+  
