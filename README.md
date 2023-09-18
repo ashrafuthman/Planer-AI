@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# PlanerAI Technical Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This repository represents a technical test for PlanerAI. The primary goal is to provide an interactive data visualization tool that offers insights into deliveries, sales, and recommendations. The project is built using React and leverages the `react-chartjs-2` library for visualization.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### 1. **Dynamic Data Visualization**
+  - A data visualization component (`Graph`) is built using React and the `react-chartjs-2` library.
+  - Data is graphically represented with `Line` charts showing Recommendations, Deliveries, and Demands.
+  - Additionally, Adjustments (improved, deteriorated, or neutral) are highlighted within the graph with distinct colors.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 2. **Interactive Filtering**
+  - Users can filter data based on selected stores (`StoreFilter`) and products (`ProductFilter`).
+  - A `Filter` component wraps the store and product filters to provide a seamless interface.
+  - The `App` component handles changes in filter selections and fetches appropriate data sets for visualization.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 3. **Data Transformation and Processing**
+  - The `useFilteredData` hook fetches, filters, and aggregates data from different datasets: recommendations, deliveries, and sales.
+  - Data sets are filtered based on the selected store and product.
+  - Aggregated data is then sorted by date.
 
-### `npm test`
+### 4. **Custom Graph Data Computation**
+  - The `useGraphData` hook computes wastes, adjustments, and generates chart data tailored for visualization.
+  - Recommendations, Deliveries, and Demands are plotted. Adjustments data is calculated and color-coded: improved (green), deteriorated (red), and neutral (transparent).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 5. **React State Management**
+  - `useState` and `useEffect` are leveraged to manage component state and side-effects respectively. This ensures that the UI is always in sync with data changes.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:ashrafuthman/Planer-AI.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the application:
+   ```bash
+   npm start
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Progress Update
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+In the past 3 hours, the foundation for this interactive data visualization tool has been laid down. I've integrated state management, data filtering, and transformation hooks, and created a modular React component structure. The goal has been to showcase an efficient and interactive tool for visualizing deliveries, sales, and recommendations data.
 
-### `npm run eject`
+## Future Considerations
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+If more time is provided, the following enhancements are planned:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **API Integration**: Instead of static datasets, an API will be implemented to fetch real-time data.
+- **TypeScript Integration**: To ensure type safety and enhance code quality, TypeScript will be integrated.
+- **More Unit Tests**: To validate the correctness of each component and utility function.
